@@ -181,7 +181,7 @@ buttons(plate_w);
 bajonett_samy12(rim_r1, rim_r2, plate_h); // bajonett inlay
 
  // lower plate
-translate ([0, 0, +D]) color([0.7,0.8,0]) plate (plate_w, plate_d, plate_h, rim_r1, rim_r2);
+// translate ([0, 0, +D]) color([0.7,0.8,0]) plate (plate_w, plate_d, plate_h, rim_r1, rim_r2);
 // add upper plate
-translate ([0, 0, plate_h+D]) rotate ([0, 180, 0]) color([0.7,0.8,0]) plate(plate_w, plate_d, plate_h, rim_r1, rim_r2);
+// translate ([0, 0, plate_h+D]) rotate ([0, 180, 0]) color([0.7,0.8,0]) plate(plate_w, plate_d, plate_h, rim_r1, rim_r2);
 

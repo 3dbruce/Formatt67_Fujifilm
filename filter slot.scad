@@ -38,10 +38,16 @@ difference(){
    // remove corners:
    translate([-l/2-3,-15,-D]) rotate([0,0,45]) cube([10,10,2*h+2*D]);
    translate([l/2+3,-15,-D]) rotate([0,0,45]) cube([10,10,2*h+2*D]);
+   // cut magnet holes
+   translate([-25,-8-D, 5+D]) cube([10,5.5,2.1]);
+   translate([+15,-8-D, 5+D]) cube([10,5.5,2.1]);
+   // cut channels to be able to remove magnets
+   translate([-21,-4-D, 5+D]) cube([2,5,1.5]);
+   translate([+19,-4-D, 5+D]) cube([2,5,1.5]);   
    }
 // add holder pins for polarizer
-translate([-l/2+8.5, -8+4.2,2*h]) pin_tack(r=1.2, h=6, lh=2.0, lt=1, bh=0, br=0);
-translate([ l/2-8.5, -8+4.2,2*h]) pin_tack(r=1.2, h=6, lh=2.0, lt=1, bh=0, br=0);
+//translate([-l/2+8.5, -8+4.2,2*h]) pin_tack(r=1.2, h=6, lh=2.0, lt=1, bh=0, br=0);
+//translate([ l/2-8.5, -8+4.2,2*h]) pin_tack(r=1.2, h=6, lh=2.0, lt=1, bh=0, br=0);
    
 // Arc on thin side
 intersection(){
