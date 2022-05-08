@@ -78,7 +78,7 @@ module rail(diam, startwinkel, winkel, offset, height, thickness, roffset=0){
 module bajonett_xf1855(rad1, rad2, height){
     
  // bajonett size for Fujifilm XF 18-55
- diam = 63.8; // bayonett diameter (mm)
+ diam = 64.0; // bayonett diameter (mm)
     
  difference(){
     inlay(rad1, rad2, height); // start with generic inlay
@@ -105,8 +105,8 @@ module bajonett_xf1855(rad1, rad2, height){
 };
 module bajonett_xf16(rad1, rad2, height){
     
- // bajonett size for Fujifilm XF 18-55
- diam = 55.5; // bayonett diameter (mm)
+ // bajonett size for Fujifilm XF 16/2.8
+ diam = 55.9; // bayonett diameter (mm)
     
  difference(){
     inlay(rad1, rad2, height); // start with generic inlay
@@ -120,7 +120,7 @@ module bajonett_xf16(rad1, rad2, height){
     rail(diam, -5,30,0-D,height+2*D,1,1.7);
     rail(diam,175,30,0-D,height+2*D,1,1.7);
     // remove 56mm cylinder to fit bayonett
-    translate([0,0,3.4-D]) cylinder(r=56.4/2, h=5+D, $fn=100);
+    translate([0,0,3.4-D]) cylinder(r=57.4/2, h=5+D, $fn=100);
     
     };
   // build bajonett rails
@@ -150,25 +150,25 @@ module bajonett_samy12(rad1, rad2, height){
 
   };
   // build bajonett rails:
-  rail (diam,     0,  5, 0, 1.75, 1.2); // 0.2mm bump at the beginning
-  rail (diam,     0, 73, 0, 1.75, 1.0); // main rail
-  rail (diam,   +68,  5, 0, 1.75, 1.2); // 0.2mm bump at the end
-  rail (diam,    -5,1.5, 0, 1.75, 0.8); // bump 3mm besides the rail to lock
+  rail (diam,     0,  5, 0, 1.70, 1.3); // 0.2mm bump at the beginning
+  rail (diam,     0, 73, 0, 1.70, 1.0); // main rail
+  rail (diam,   +68,  5, 0, 1.70, 1.3); // 0.2mm bump at the end
+  rail (diam,    -5,1.5, 0, 1.70, 0.8); // bump 3mm besides the rail to lock
 
-  rail (diam, 90   ,  5, 3, 1.75, 1.2); // 0.2mm bump at the beginning
-  rail (diam, 90   , 73, 3, 1.75, 1.0); // main rail
-  rail (diam, 90+68,  5, 3, 1.75, 1.2); // 0.2mm bump at the end
-  rail (diam, 90 -5,1.5, 3, 1.75, 0.8); // bump 3mm besides the rail to lock
+  rail (diam, 90   ,  5, 3, 1.70, 1.3); // 0.2mm bump at the beginning
+  rail (diam, 90   , 73, 3, 1.70, 1.0); // main rail
+  rail (diam, 90+68,  5, 3, 1.70, 1.3); // 0.2mm bump at the end
+  rail (diam, 90 -5,1.5, 3, 1.70, 0.8); // bump 3mm besides the rail to lock
 
-  rail (diam,180   ,  5, 0, 1.75, 1.2); // 0.2mm bump at the beginning
-  rail (diam,180   , 73, 0, 1.75, 1.0); // main rail
-  rail (diam,180+68,  5, 0, 1.75, 1.2); // 0.2mm bump at the end
-  rail (diam,180 -5,1.5, 0, 1.75, 0.8); // bump 3mm besides the rail to lock
+  rail (diam,180   ,  5, 0, 1.70, 1.3); // 0.2mm bump at the beginning
+  rail (diam,180   , 73, 0, 1.70, 1.0); // main rail
+  rail (diam,180+68,  5, 0, 1.70, 1.3); // 0.2mm bump at the end
+  rail (diam,180 -5,1.5, 0, 1.70, 0.8); // bump 3mm besides the rail to lock
 
-  rail (diam,270   ,  5, 3, 1.75, 1.2); // 0.2mm bump at the beginning
-  rail (diam,270   , 73, 3, 1.75, 1.0); // main rail
-  rail (diam,270+68,  5, 3, 1.75, 1.2); // 0.2mm bump at the end
-  rail (diam,270 -5,1.5, 3, 1.75, 0.8); // bump 3mm besides the rail to lock
+  rail (diam,270   ,  5, 3, 1.70, 1.3); // 0.2mm bump at the beginning
+  rail (diam,270   , 73, 3, 1.70, 1.0); // main rail
+  rail (diam,270+68,  5, 3, 1.70, 1.3); // 0.2mm bump at the end
+  rail (diam,270 -5,1.5, 3, 1.70, 0.8); // bump 3mm besides the rail to lock
 }
 module buttons(width,spce=0.2){
   tot_len = 40; // total length of button holder
@@ -281,9 +281,9 @@ module polarizer(width, depth, height, rad1, rad2) {
 };
 // main
 buttons(plate_w);
-bajonett_xf1855(rim_r1, rim_r2, plate_h); // bajonett inlay
-// bajonett_xf16(rim_r1, rim_r2, plate_h); // bajonett inlay
-// bajonett_samy12(rim_r1, rim_r2, plate_h); // bajonett inlay
+// bajonett_xf1855(rim_r1, rim_r2, plate_h); // bajonett inlay
+//bajonett_xf16(rim_r1, rim_r2, plate_h); // bajonett inlay
+bajonett_samy12(rim_r1, rim_r2, plate_h); // bajonett inlay
 
  // lower plate:
 translate ([0, 0, +D]) color([0.7,0.8,0]) plate (plate_w, plate_d, plate_h, rim_r1, rim_r2);
@@ -292,5 +292,6 @@ translate ([0, 0, plate_h+D]) rotate ([0, 180, 0]) color([0.7,0.8,0]) plate(plat
 // add slot holders:
 translate ([plate_w/2-8, 0, plate_h+D]) rotate ([0, 0, 90]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
 translate ([-plate_w/2+8, 0, plate_h+D]) rotate ([0, 0, 270]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
+//translate ([0,0,8]) rotate ([90, 0, 0]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
 // add polarizer:
 translate ([0, 0, 14+D]) color([0.7,0.8,0]) polarizer (plate_w, plate_d, polar_h, rim_r1, rim_r2);
