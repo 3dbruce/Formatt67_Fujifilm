@@ -150,25 +150,27 @@ module bajonett_samy12(rad1, rad2, height){
 
   };
   // build bajonett rails:
-  rail (diam,     0,  5, 0, 1.70, 1.3); // 0.2mm bump at the beginning
-  rail (diam,     0, 73, 0, 1.70, 1.0); // main rail
-  rail (diam,   +68,  5, 0, 1.70, 1.3); // 0.2mm bump at the end
-  rail (diam,    -5,1.5, 0, 1.70, 0.8); // bump 3mm besides the rail to lock
+  rail (diam,     0,  5,1.4, 1.60, 1.0); // 0.1mm bump at the beginning
+  rail (diam,     0, 73,1.4, 1.60, 0.8); // main rail
+  rail (diam,   +68,  5,1.4, 1.60, 1.0); // 0.1mm bump at the end
+  rail (diam,   -5.5,1.0,1.4, 1.60, 0.6); // bump 3mm besides the rail to lock
+  rail (diam,   -6.5,1.0,1.4, 1.60, 0.4); // bump 3mm besides the rail to lock
+  rail (diam,   -7.5,1.0,1.4, 1.60, 0.2); // bump 3mm besides the rail to lock
 
-  rail (diam, 90   ,  5, 3, 1.70, 1.3); // 0.2mm bump at the beginning
-  rail (diam, 90   , 73, 3, 1.70, 1.0); // main rail
-  rail (diam, 90+68,  5, 3, 1.70, 1.3); // 0.2mm bump at the end
-  rail (diam, 90 -5,1.5, 3, 1.70, 0.8); // bump 3mm besides the rail to lock
+  rail (diam, 90   ,  5,4.4, 1.60, 1.0); // 0.1mm bump at the beginning
+  rail (diam, 90   , 73,4.4, 1.60, 0.8); // main rail
+  rail (diam, 90+68,  5,4.4, 1.60, 1.0); // 0.1mm bump at the end
 
-  rail (diam,180   ,  5, 0, 1.70, 1.3); // 0.2mm bump at the beginning
-  rail (diam,180   , 73, 0, 1.70, 1.0); // main rail
-  rail (diam,180+68,  5, 0, 1.70, 1.3); // 0.2mm bump at the end
-  rail (diam,180 -5,1.5, 0, 1.70, 0.8); // bump 3mm besides the rail to lock
+  rail (diam,180   ,  5,1.4, 1.60, 1.0); // 0.1mm bump at the beginning
+  rail (diam,180   , 73,1.4, 1.60, 0.8); // main rail
+  rail (diam,180+68,  5,1.4, 1.60, 1.0); // 0.1mm bump at the end
+  rail (diam,180-5.5,1.0,1.4, 1.60, 0.6); // bump 3mm besides the rail to lock
+  rail (diam,180-6.5,1.0,1.4, 1.60, 0.4); // bump 3mm besides the rail to lock
+  rail (diam,180-7.5,1.0,1.4, 1.60, 0.2); // bump 3mm besides the rail to lock
 
-  rail (diam,270   ,  5, 3, 1.70, 1.3); // 0.2mm bump at the beginning
-  rail (diam,270   , 73, 3, 1.70, 1.0); // main rail
-  rail (diam,270+68,  5, 3, 1.70, 1.3); // 0.2mm bump at the end
-  rail (diam,270 -5,1.5, 3, 1.70, 0.8); // bump 3mm besides the rail to lock
+  rail (diam,270   ,  5,4.4, 1.60, 1.0); // 0.1mm bump at the beginning
+  rail (diam,270   , 73,4.4, 1.60, 0.8); // main rail
+  rail (diam,270+68,  5,4.4, 1.60, 1.0); // 0.1mm bump at the end
 }
 module buttons(width,spce=0.2){
   tot_len = 40; // total length of button holder
@@ -280,18 +282,18 @@ module polarizer(width, depth, height, rad1, rad2) {
     };
 };
 // main
-buttons(plate_w);
+//buttons(plate_w);
 // bajonett_xf1855(rim_r1, rim_r2, plate_h); // bajonett inlay
 //bajonett_xf16(rim_r1, rim_r2, plate_h); // bajonett inlay
 bajonett_samy12(rim_r1, rim_r2, plate_h); // bajonett inlay
 
  // lower plate:
-translate ([0, 0, +D]) color([0.7,0.8,0]) plate (plate_w, plate_d, plate_h, rim_r1, rim_r2);
+//translate ([0, 0, +D]) color([0.7,0.8,0]) plate (plate_w, plate_d, plate_h, rim_r1, rim_r2);
 // add upper plate:
-translate ([0, 0, plate_h+D]) rotate ([0, 180, 0]) color([0.7,0.8,0]) plate(plate_w, plate_d, plate_h, rim_r1, rim_r2);
+//translate ([0, 0, plate_h+D]) rotate ([0, 180, 0]) color([0.7,0.8,0]) plate(plate_w, plate_d, plate_h, rim_r1, rim_r2);
 // add slot holders:
-translate ([plate_w/2-8, 0, plate_h+D]) rotate ([0, 0, 90]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
-translate ([-plate_w/2+8, 0, plate_h+D]) rotate ([0, 0, 270]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
+//translate ([plate_w/2-8, 0, plate_h+D]) rotate ([0, 0, 90]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
+//translate ([-plate_w/2+8, 0, plate_h+D]) rotate ([0, 0, 270]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
 //translate ([0,0,8]) rotate ([90, 0, 0]) slot(l=plate_d, l1=22, w1=8, w2=1, w3=4, of=1.4, h=4);
 // add polarizer:
-translate ([0, 0, 14+D]) color([0.7,0.8,0]) polarizer (plate_w, plate_d, polar_h, rim_r1, rim_r2);
+//translate ([0, 0, 14+D]) color([0.7,0.8,0]) polarizer (plate_w, plate_d, polar_h, rim_r1, rim_r2);
